@@ -5,23 +5,47 @@ body {
   text-transform: capitalize;
 }
 
-#header::-webkit-scrollbar {
-  background-color: grey;
-  border: 0.5px solid whitesmoke;
-  border-radius: 8px;
-  width: 7px;
+
+/* Body Scroll Bar Start */
+body::-webkit-scrollbar {
+  width: 10px;
 }
 
-#header::-webkit-scrollbar-thumb {
-  background-color: white;
-  border: 0.5px solid rgb(89, 233, 130);
+body::-webkit-scrollbar-track {
   border-radius: 8px;
+  background-color: #e7e7e7;
+  border: 1px solid #cacaca;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #363636;
+}
+
+/*  Body Scroll Bar */
+
+
+
+/* Header Scroll Bar Start */
+#header::-webkit-scrollbar {
+  width: 10px;
 }
 
 #header::-webkit-scrollbar-track {
-  color: #2eafec;
+  border-radius: 8px;
+  background-color: #e7e7e7;
+  border: 1px solid #cacaca;
 }
 
+#header::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color:  #363636;
+}
+
+/* Header Scroll Bar End */
+
+
+/* Anchor & Headings CSS Start */
 a {
   color: #149ddd;
 }
@@ -40,9 +64,9 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
-/* BODY SECTION */
+/* Anchor & Headings CSS End */
 
-
+/* Body CSS Start */
 .back-to-top {
   position: fixed;
   display: none;
@@ -70,8 +94,13 @@ h6 {
   transition: background 0.2s ease-in-out;
 }
 
+/* Body CSS End */
 
-/* HEADER */
+/* MOBILE HORIZONTAL CSS START HERE */
+
+
+
+/* Header CSS Start */
 #header {
   position: fixed;
   top: 0;
@@ -85,6 +114,8 @@ h6 {
   background: #040b14;
   overflow-y: auto;
 }
+
+
 
 #header .profile img {
   margin: 15px auto;
@@ -130,7 +161,10 @@ h6 {
   color: #fff;
   text-decoration: none;
 }
+/* Header CSS End */
 
+
+/* Main CSS Start */
 #main {
   margin-left: 300px;
 }
@@ -145,6 +179,10 @@ h6 {
   }
 }
 
+/* Main CSS End */
+
+
+/* Navigation CSS Start */
 .nav-menu {
   padding-top: 30px;
 }
@@ -189,9 +227,9 @@ h6 {
 .nav-menu li:hover>a i {
   color: #149ddd;
 }
+/* Navigation CSS End */
 
 /* MOBILE NAVIGATION */
-
 .mobile-nav-toggle {
   position: fixed;
   right: 15px;
@@ -223,12 +261,11 @@ h6 {
 .mobile-nav-active .mobile-nav-toggle i {
   color: #fff;
 }
+/* Mobile Navigation CSS End */
 
 
 
-/* HERO SECTION */
-
-
+/* HERO SECTION CSS */
 #hero {
   width: 100%;
   height: 100vh;
@@ -302,6 +339,7 @@ h6 {
     margin-bottom: 30px;
   }
 }
+/* HERO SECTION CSS END */
 
 
 /* SECTION 1 */
@@ -342,10 +380,10 @@ section {
   margin-bottom: 0;
   text-align: justify;
 }
+/* SECTION 1 CSS END */
 
 
-/* ABOUT SECTION */
-
+/* ABOUT SECTION CSS */
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
@@ -371,10 +409,9 @@ section {
   margin-bottom: 0;
   text-align: justify;
 }
-
+/* ABOUT SECTION CSS END */
 
 /* MORE ABOUT SECTION */
-
 .facts {
   padding-bottom: 30px;
 }
@@ -422,6 +459,7 @@ section {
 .facts .count-box a:hover {
   color: #1f5297;
 }
+/* MORE ABOUT SECTION END */
 
 /*--------------------------------------------------------------
 # Akills
@@ -674,6 +712,9 @@ section {
   font-size: 14px;
   text-align: justify;
 }
+
+/* RECENT PROJECTS START HERE */
+/* RECENT PROJECTS END HERE */
 
 /* TESTIMONIAL SECTION */
 
@@ -1131,3 +1172,113 @@ section {
 }
 
 /* FOOTER SECTION */
+
+
+/* BLOG CSS */
+.box {
+  font-family: 'Raleway', sans-serif;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.box:before {
+  content: "";
+  background: linear-gradient(to right, #2c89d4, #055ea7);
+  width: 100%;
+  height: 100%;
+  opacity: 0.75;
+  transform: scale(0);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.box:hover:before {
+  transform: scale(1);
+}
+
+.box img {
+  width: 100%;
+  height: auto;
+  transition: all 0.5s ease 0s;
+}
+
+.box:hover img {
+  transform: rotate(-8deg) scale(1.2);
+}
+
+.box .box-content {
+  color: #055ea7;
+  background: rgba(255, 255, 255, 0.48);
+  width: 100%;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  opacity: 0;
+  transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transition: all 0.8s;
+}
+
+.box:hover .box-content {
+  border-radius: 70px 0;
+  opacity: 1;
+}
+
+.box .title {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 4px;
+  text-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+}
+
+.box .post {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0 0 10px;
+  display: block;
+}
+
+.box .icon {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.box .icon li {
+  margin: 0 3px;
+  display: inline-block;
+}
+
+.box .icon li a {
+  color: #fff;
+  font-size: 16px;
+  line-height: 32px;
+  height: 35px;
+  width: 35px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  display: block;
+  transition: all 0.3s;
+}
+
+.box .icon li a:hover {
+  color: #055ea7;
+  background-color: #fff;
+}
+
+@media only screen and (max-width:990px) {
+  .box {
+    margin: 0 0 30px;
+  }
+}
